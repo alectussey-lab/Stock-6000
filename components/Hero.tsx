@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const Starfield: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -94,10 +96,12 @@ const Starfield: React.FC = () => {
 };
 
 const Hero: React.FC = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatMessages, setChatMessages] = useState<{role: 'user' | 'ai', text: string}[]>([
-    { role: 'ai', text: 'How can I adjust these metrics for you?' }
+    { role: 'ai', text: 'Hello! I am Alec Stock AI. How can I assist you today?' }
   ]);
   const [chatInput, setChatInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [chartData, setChartData] = useState<number[]>([120, 100, 110, 80, 90, 60, 70, 40, 50, 20]);
   const [weeklyGrowth, setWeeklyGrowth] = useState<string>('+24.5%');
   const [revenue, setRevenue] = useState<string>('$124,500');
@@ -110,21 +114,50 @@ const Hero: React.FC = () => {
     }
   }, [chatMessages]);
 
-  const handleChatSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter' && chatInput.trim()) {
-      const newMessages = [...chatMessages, { role: 'user' as const, text: chatInput }];
-      setChatMessages(newMessages);
-      setChatInput('');
+  const handleSend = async () => {
+    if (!chatInput.trim() || isLoading) return;
+
+    const userMessage = chatInput.trim();
+    setChatInput('');
+    setChatMessages(prev => [...prev, { role: 'user', text: userMessage }]);
+    setIsLoading(true);
+
+    try {
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('Gemini API key is not configured.');
+      }
+
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
       
-      setTimeout(() => {
-        setChatMessages(prev => [...prev, { role: 'ai', text: 'Optimizing metrics based on your request. Generating new trajectory...' }]);
-        
-        const newChartData = chartData.map((val, i) => Math.max(10, val - (Math.random() * 20 - 5) - i * 2));
-        setChartData(newChartData);
-        
-        setWeeklyGrowth('+' + (24.5 + Math.random() * 15).toFixed(1) + '%');
-        setRevenue('$' + (124500 + Math.floor(Math.random() * 30000)).toLocaleString());
-      }, 800);
+      const chat = model.startChat({
+        history: chatMessages.filter(m => m.text !== 'Hello! I am Alec Stock AI. How can I assist you today?').map(m => ({
+          role: m.role === 'ai' ? 'model' : 'user',
+          parts: [{ text: m.text }],
+        })),
+      });
+
+      const result = await chat.sendMessage(userMessage + "\n\n(You are Alec Stock AI. Give a short, concise response analyzing the request. Pretend to optimize the user's trajectory based on their prompt.)");
+      const responseText = result.response.text();
+      
+      setChatMessages(prev => [...prev, { role: 'ai', text: responseText }]);
+      
+      const newChartData = chartData.map((val, i) => Math.max(10, val - (Math.random() * 20 - 5) - i * 2));
+      setChartData(newChartData);
+      setWeeklyGrowth('+' + (24.5 + Math.random() * 15).toFixed(1) + '%');
+      setRevenue('$' + (124500 + Math.floor(Math.random() * 30000)).toLocaleString());
+    } catch (error) {
+      console.error('Error with Gemini:', error);
+      setChatMessages(prev => [...prev, { role: 'ai', text: 'Sorry, I encountered an error. Please check your API key.' }]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChatSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSend();
     }
   };
 
@@ -255,7 +288,7 @@ const Hero: React.FC = () => {
 
                 <div className="flex-1 flex gap-4">
                   {/* Enhanced Graph Area */}
-                  <div className="flex-[2] bg-white/5 rounded-2xl border border-white/10 relative overflow-hidden flex flex-col group/chart hover:border-white/20 transition-all">
+                  <div className="flex-1 bg-white/5 rounded-2xl border border-white/10 relative overflow-hidden flex flex-col group/chart hover:border-white/20 transition-all">
                     <div className="px-6 pt-5 pb-2 flex items-center justify-between z-10">
                       <div>
                         <div className="text-gray-400 text-[10px] uppercase tracking-wider mb-1">Weekly Growth</div>
@@ -298,31 +331,6 @@ const Hero: React.FC = () => {
                           {revenue}
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Chatbot Interface */}
-                  <div className="flex-1 bg-white/5 rounded-2xl border border-white/10 relative overflow-hidden flex flex-col shadow-inner">
-                    <div className="px-4 py-3 border-b border-white/10 flex items-center gap-2 bg-white/5">
-                      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                      <span className="text-xs font-bold text-white tracking-wide">AI Graph Agent</span>
-                    </div>
-                    <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto flex flex-col gap-3 scroll-smooth">
-                      {chatMessages.map((msg, i) => (
-                        <div key={i} className={`text-[11px] p-2.5 rounded-xl max-w-[90%] leading-relaxed ${msg.role === 'ai' ? 'bg-red-500/10 text-red-100 border border-red-500/20 rounded-tl-sm self-start' : 'bg-white/10 text-white ml-auto border border-white/10 rounded-tr-sm self-end'}`}>
-                          {msg.text}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="p-3 border-t border-white/10 bg-black/20">
-                      <input 
-                        type="text" 
-                        value={chatInput}
-                        onChange={(e) => setChatInput(e.target.value)}
-                        onKeyDown={handleChatSubmit}
-                        placeholder="Type to adjust graph... (Press Enter)" 
-                        className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-[11px] text-white focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-gray-500"
-                      />
                     </div>
                   </div>
                 </div>
@@ -373,6 +381,66 @@ const Hero: React.FC = () => {
           borderRadius: '50% / 100% 100% 0 0',
           filter: 'blur(40px)'
         }} />
+
+      {/* Floating Chatbot Widget */}
+      {isChatOpen && (
+        <div className="fixed bottom-24 right-6 w-80 sm:w-96 h-[500px] max-h-[80vh] bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col z-50 overflow-hidden font-sans">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-red-600 to-rose-600 p-4 flex justify-between items-center text-white">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <h3 className="font-bold text-sm tracking-wide">Alec Stock AI</h3>
+            </div>
+            <button onClick={() => setIsChatOpen(false)} className="text-white/80 hover:text-white transition-colors cursor-pointer">
+              <X size={18} />
+            </button>
+          </div>
+
+          {/* Messages */}
+          <div ref={chatContainerRef} className="flex-1 p-4 overflow-y-auto flex flex-col gap-3 scroll-smooth">
+            {chatMessages.map((msg, idx) => (
+              <div key={idx} className={`text-sm p-3 rounded-2xl max-w-[85%] leading-relaxed ${msg.role === 'ai' ? 'bg-red-500/10 text-red-50 border border-red-500/20 rounded-tl-sm self-start' : 'bg-white/10 text-white border border-white/10 rounded-tr-sm self-end'}`}>
+                {msg.text}
+              </div>
+            ))}
+            {isLoading && (
+              <div className="bg-red-500/10 text-red-50 border border-red-500/20 p-3 rounded-2xl rounded-tl-sm self-start max-w-[85%] flex items-center gap-2">
+                <Loader2 size={16} className="animate-spin" />
+                <span className="text-xs">Analyzing...</span>
+              </div>
+            )}
+          </div>
+
+          {/* Input Area */}
+          <div className="p-3 border-t border-white/10 bg-black/40">
+            <div className="relative flex items-center">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={e => setChatInput(e.target.value)}
+                onKeyDown={handleChatSubmit}
+                placeholder="Ask Alec Stock AI..."
+                className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-10 py-2.5 text-sm text-white focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 transition-all placeholder:text-gray-500"
+              />
+              <button
+                onClick={handleSend}
+                disabled={!chatInput.trim() || isLoading}
+                className="absolute right-1.5 p-1.5 bg-red-500 text-white rounded-full hover:bg-red-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors cursor-pointer"
+              >
+                <Send size={14} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Action Button */}
+      <button
+        onClick={() => setIsChatOpen(!isChatOpen)}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-tr from-red-600 to-orange-500 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(227,24,55,0.4)] hover:shadow-[0_0_30px_rgba(227,24,55,0.6)] hover:scale-110 transition-all z-50 group cursor-pointer"
+      >
+        {isChatOpen ? <X size={24} /> : <MessageCircle size={24} className="group-hover:animate-pulse" />}
+      </button>
 
       <style>{`
         @keyframes fadeInUp {

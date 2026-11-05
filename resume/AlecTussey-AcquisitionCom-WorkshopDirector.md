@@ -2,7 +2,7 @@
 Kansas City, MO | 816-550-6015 | alec.tussey@gmail.com | linkedin.com/in/alec-tussey
 
 ## Summary
-Consultative closer with 7+ years selling high-ticket, long-cycle deals directly to owners and executive teams. Closed a $3.3M CapEx project $800K over the buyer's stated budget by selling ROI, not price. Founding seller who built an outside sales function from zero, plus a co-founder who knows what it takes to run a business. Engineer by training, operator by instinct, now focused on AI and automation for business owners.
+I find the bottleneck and remove it. Most of the time that's happened in sales: building outbound engines from zero, generating $80M+ in self-sourced pipeline, and closing seven-figure deals with owners, executive teams, and CFOs. I've also co-founded and run a business, so I sell from the owner's side of the table. Self-taught in corporate finance (P&L, cash flow, balance sheet) and AI automation, and I use both every day to sell on ROI and scale my own output.
 
 ## Experience
 
@@ -68,6 +68,10 @@ Direct-sales industrial automation, known for one of the most demanding sales tr
 ## Education
 **BS Mechanical Engineering** | Western Michigan University | 2018
 Minors: Mathematics, Business
+
+## Self-Directed Development
+- **Finance:** Taught myself corporate finance to sell at the CFO level. I build ROI and payback cases, and I speak fluently in P&L, cash flow, and balance sheet impact
+- **AI and automation:** 200+ hours of AI coursework, applied daily: n8n workflows, automated enrichment and prospecting, and CRM/ERP integration
 
 ## Skills
 Owner-level consultative selling, high-ticket closing, negotiation, discovery, ROI selling, complex sales cycles, building sales teams from zero, sales ops and SOPs, international sales, AI and automation

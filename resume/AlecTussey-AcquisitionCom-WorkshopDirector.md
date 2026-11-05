@@ -10,7 +10,13 @@ Consultative closer with 7+ years selling high-ticket, long-cycle deals directly
 - [TBD: what you sell, who you sell to, wins so far]
 
 **Director of Sales, Central US | TMG (Tri-Mach Group) | Jun 2024 – Dec 2025**
-- [TBD: territory scope, revenue closed, team size if any, biggest deals]
+Canadian OEM of bespoke material handling and automation systems; led US expansion across the central region.
+- Self-generated $52M+ in pipeline across 180+ unique opportunities, 100% from cold outreach
+- Closed $3.2M personally; an additional $7M from pipeline I built closed after my departure
+- Sold into Fortune 500 enterprise, mid-market, and SMB accounts across CapEx and OpEx budgets
+- Ran the full cycle: TAM mapping, outbound, discovery, solution design, proposal, negotiation, close
+- Led cross-functional engineering teams through design of custom material handling systems
+- Managed cross-border trade logistics importing equipment from Canada into the US
 
 **Program Manager | Scan American Corporation | Kansas City, MO | Jan 2022 – May 2024**
 Distributor for global OEMs selling turnkey processing, automation, and material handling systems into food, pharma, cosmetic, petfood, and beverage manufacturers.

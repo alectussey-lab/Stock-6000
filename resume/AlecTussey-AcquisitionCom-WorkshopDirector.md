@@ -7,7 +7,13 @@ Consultative closer with 7+ years selling high-ticket, long-cycle deals directly
 ## Experience
 
 **Sales Executive | Forpak Automation | Jan 2026 – Present**
-- [TBD: what you sell, who you sell to, wins so far]
+Brought on to build the company's outbound go-to-market engine from scratch; own all of US and Canada.
+- Generated $28M in pipeline from cold outbound in under 11 months
+- Built the outbound playbook: TAM mapping, ICP definition, account tiering, messaging, and cadence
+- Pioneered product-based TAM mapping, matching each machine line to the specific manufacturers and processes that need it
+- Redesigned the CRM and integrated it with ERP so sales, engineering, and operations work from one source of truth
+- Built automated prospecting and enrichment workflows with n8n, ZoomInfo, Apollo, and Lusha
+- Lead multimillion-dollar custom-engineered equipment projects from discovery through design and proposal
 
 **Director of Sales, Central US | TMG (Tri-Mach Group) | Jun 2024 – Dec 2025**
 Canadian OEM of bespoke material handling and automation systems. First outbound seller in the US.
@@ -60,4 +66,6 @@ Direct-sales industrial automation, known for one of the most demanding sales tr
 Minors: Mathematics, Business
 
 ## Skills
-Owner-level consultative selling, high-ticket closing, negotiation, discovery, ROI selling, complex sales cycles, building sales teams from zero, sales ops and SOPs, Salesforce, ZoomInfo, international sales, AI and automation
+Owner-level consultative selling, high-ticket closing, negotiation, discovery, ROI selling, complex sales cycles, building sales teams from zero, sales ops and SOPs, international sales, AI and automation
+
+**Tools:** Salesforce, ZoomInfo, Apollo, Lusha, n8n, CRM/ERP integration, AutoCAD/SolidWorks

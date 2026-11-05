@@ -37,7 +37,12 @@ Vertical SaaS for hospital, clinic, university, and community pharmacies.
 - Built the playbook: sales strategy, SOPs, KPIs, CRM, and marketing
 
 **Co-Founder & Head of Operations and Engineering | T5 Group | Jun 2019 – Dec 2019**
-- [TBD: what the business did, what you built, outcome]
+Family-funded greenfield venture ($1.5M capital) growing, harvesting, and processing bulk hemp for the CBD market.
+- Built the operation from zero in an industry with no playbook: sourced and managed 11,000 and 22,000 sq ft facilities
+- Partnered with engineering firms to design and build first-to-market harvesting and drying systems
+- Negotiated distribution relationships and offtake contracts
+- Led operations crews through harvest and processing; one of the only operators in the region to successfully harvest, which opened a toll-processing revenue line for other growers
+- Wound down the business after a regulatory shift collapsed bulk prices from $33/lb to under $1/lb in a single season
 
 **Sales Engineer I → II | Keyence Corporation | Dallas, TX | Jun 2018 – Jun 2019**
 Direct-sales industrial automation, known for one of the most demanding sales training programs in the industry.

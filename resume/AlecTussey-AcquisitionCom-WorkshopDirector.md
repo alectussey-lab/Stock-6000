@@ -10,11 +10,13 @@ Consultative closer with 7+ years selling high-ticket, long-cycle deals directly
 - [TBD: what you sell, who you sell to, wins so far]
 
 **Director of Sales, Central US | TMG (Tri-Mach Group) | Jun 2024 – Dec 2025**
-Canadian OEM of bespoke material handling and automation systems; led US expansion across the central region.
-- Self-generated $52M+ in pipeline across 180+ unique opportunities, 100% from cold outreach
-- Closed $3.2M personally; an additional $7M from pipeline I built closed after my departure
-- Sold into Fortune 500 enterprise, mid-market, and SMB accounts across CapEx and OpEx budgets
-- Ran the full cycle: TAM mapping, outbound, discovery, solution design, proposal, negotiation, close
+Canadian OEM of bespoke material handling and automation systems. First outbound seller in the US.
+- Built US go-to-market from scratch: market intel, TAM mapping, account strategy, and outbound execution
+- Self-generated $52M+ in pipeline across 180+ unique opportunities, 100% from cold email, calls, and LinkedIn
+- Converted ~75% of first meetings into qualified opportunities
+- Closed $3.2M personally, including a $1.8M turnkey processing room for a sausage manufacturer; an additional $7M from pipeline I built closed after my departure
+- Mapped and penetrated Fortune 500 enterprise accounts (incl. Tyson Foods, Nestlé) alongside mid-market and SMB, across CapEx and OpEx budgets
+- Generated deals faster than engineering could absorb, so rebuilt the application engineering intake, tracking, and design workflow to scale throughput
 - Led cross-functional engineering teams through design of custom material handling systems
 - Managed cross-border trade logistics importing equipment from Canada into the US
 

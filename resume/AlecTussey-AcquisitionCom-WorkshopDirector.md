@@ -72,6 +72,8 @@ Minors: Mathematics, Business
 ## Self-Directed Development
 - **Finance:** Taught myself corporate finance to sell at the CFO level. I build ROI and payback cases, and I speak fluently in P&L, cash flow, and balance sheet impact
 - **AI and automation:** 200+ hours of AI coursework, applied daily: n8n workflows, automated enrichment and prospecting, and CRM/ERP integration
+- **Acquisition.com:** Student of Alex Hormozi's frameworks ([$100M Offers / $100M Leads / other: confirm]) and apply them to offer design, lead generation, and outbound
+- **Discipline and leadership:** Learned to control my own body composition by tracking every detail and staying consistent, reaching visible abs multiple times. Now run an annual cut challenge for friends and family and have coached several of them to the same result
 
 ## Skills
 Owner-level consultative selling, high-ticket closing, negotiation, discovery, ROI selling, complex sales cycles, building sales teams from zero, sales ops and SOPs, international sales, AI and automation

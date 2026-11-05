@@ -7,13 +7,17 @@ Consultative closer with 7+ years selling high-ticket, long-cycle deals directly
 ## Experience
 
 **Sales Executive | Forpak Automation | Jan 2026 – Present**
-Brought on to build the company's outbound go-to-market engine from scratch; own all of US and Canada.
-- Generated $28M in pipeline from cold outbound in under 11 months
+Brought on to build the company's outbound go-to-market engine from scratch; own all of US and Canada. Report to the CEO and private equity sponsor.
+- Generated $28M in cold outbound pipeline across 39 unique opportunities in under 11 months, with 85% of first meetings converting to opportunities
+- [CLOSED REVENUE: fill in actual closed number before sending]
+- Advancing a $4.5M project with a major McDonald's beef supplier
 - Built the outbound playbook: TAM mapping, ICP definition, account tiering, messaging, and cadence
 - Pioneered product-based TAM mapping, matching each machine line to the specific manufacturers and processes that need it
-- Redesigned the CRM and integrated it with ERP so sales, engineering, and operations work from one source of truth
-- Built automated prospecting and enrichment workflows with n8n, ZoomInfo, Apollo, and Lusha
-- Lead multimillion-dollar custom-engineered equipment projects from discovery through design and proposal
+- Deliver TAM/SAM analysis, market intel, and resource allocation recommendations directly to the CEO and PE group
+- Redesigned the CRM and integrated it with the ERP using n8n so sales, engineering, and operations work from one source of truth
+- Act as the integrator on greenfield and brownfield line projects: source partner OEMs and subcontractors, bid full scope, and lead 3 to 4 partner companies plus internal engineering in front of enterprise buyers
+- Work in lockstep with application engineering on design and sourcing specs for every multimillion-dollar custom project
+- Took over PACK EXPO after the entire tradeshow team departed: rebuilt the booth plan, crating, freight, show logistics, setup, teardown, and worked the booth
 
 **Director of Sales, Central US | TMG (Tri-Mach Group) | Jun 2024 – Dec 2025**
 Canadian OEM of bespoke material handling and automation systems. First outbound seller in the US.
